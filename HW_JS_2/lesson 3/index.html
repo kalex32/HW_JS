@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title> Title </title>
+</head>
+
+	<body>
+        <script>
+            let f = function(a, b) {
+    document.write("a: " + a + " b: " + b + "<br />");    
+};
+
+f(1,2);
+
+function boo(func, a, b) {
+    document.write("call function " + func + "<br />");
+    func(a, b);
+}
+
+boo(f, 10, 20);
+
+boo(function(a, b){
+    document.write("a x b = " + (a  * b) + "<br />");
+}, 5, 6);
+
+boo((a, b) => {
+    document.write("a + b = " + (a  + b) + "<br />");
+}, 10, 30);
+
+var add = (a, b) => a > b;
+
+document.write(add(1, 2));
+
+function print_arr(arr) {
+    document.write("<p>");
+    document.write(arr);
+    document.write("</p>");
+}
+
+/////////////////////////////////////////
+///////         arrays          /////////
+/////////////////////////////////////////
+var arr = [1, 2, 3, 4, 5]; // создание и инициализация
+print_arr(arr);
+arr = new Array(10);   // создание на 10 элементов
+print_arr(typeof(arr[0]));
+arr = new Array(10, 20, 30);   // создание на 3 элемента
+print_arr(arr);
+
+// resize
+arr = [1,2,3,4,5,6];
+arr.length = 10;
+print_arr(arr);
+
+arr.length = 2;
+print_arr(arr);
+
+//arr.length = 10;
+//print_arr(arr);
+
+        
+        </script>
+</body>
+</html>
