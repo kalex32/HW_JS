@@ -3,7 +3,7 @@ var num = Math.round(Math.random() * 100);
 
 var guessedNum = 0;
 
-for (var count = 0; guessedNum != num; count++) {
+for (var count = 0; guessedNum !== num; count++) {
     guessedNum = prompt("Введите число от 0 до 100", '');
     if (guessedNum === null) {
         alert("Выход");
