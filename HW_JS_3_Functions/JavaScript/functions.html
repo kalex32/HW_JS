@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+</head>
+
+<body>
+    <script type="text/javascript">
+        "use strict"
+
+        function parametr(text) {
+
+            for (var i = 0; i < arguments.length; i++) {
+                document.write("<p>");
+                document.write(arguments[i]);
+                console.log(arguments[i]);
+                document.write("</p>");
+
+            }
+            console.log("аргументов : " + arguments.length)
+
+
+
+        }
+
+        parametr("Hello javaScript again");
+        parametr('First ', 'Second ', 'Third');
+
+        function add(a, b) {
+            //                if(isNaN (a)){
+            //                    a=0;
+            //                }
+            //                if(isNaN (b)){
+            //                    b=0;
+            //                }
+
+            a = a || 0;
+            b = b || 0;
+
+            return a + b;
+        }
+
+        console.log(add(10, 20));
+        console.log(add(10));
+        console.log(add());
+
+        var cpy = add;
+        console.log(cpy(20, 30));
+
+        var cmpFunc = function(a, b) {
+            return a - b;
+        };
+        parametr(cmpFunc(20, 10));
+
+        var arr = [9, 4, 7, 2, 3, 1];
+
+    function sort(arr, f) {
+     for (var i = 0; i < arr.length; i++) {
+        for (var j = 0; j < arr.length - i-1; j++)
+             if(f(arr[j], arr[j+1])>0){
+                 var tmp=arr[j];
+                 arr[j]=arr[j+1];
+                 arr[j+1]=tmp;
+             }
+            }
+        }
+        
+    parametr(arr.join(","));
+    sort(arr, cmpFunc);
+    parametr(arr.join(","));
+    sort(arr, function(a,b){
+        return b-a;
+    });
+    parametr(arr.join("="));
+        
+
+    </script>
+</body>
+
+</html>

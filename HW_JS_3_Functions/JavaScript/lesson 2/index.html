@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title> Title </title>
+</head>
+
+<body>
+    <script>
+        var a = 100; {
+
+            let a = 10;
+            document.writeln("a =" + a + "</br>");
+        }
+        document.writeln("a =" + a + "</br>");
+
+        const AS = 3.14;
+        document.writeln("PI =" + AS);
+        //        AS = 2;
+        //            document.writeln("PI =" + AS);
+
+
+        document.write("</br>");
+
+        function printf(fmt, ...args) {
+            if (fmt !== undefined) {
+                for (let i = 0; i < args.length; i++) {
+                    //document.writeln(i +": " + args[i]+"</br>");
+                    fmt = fmt.replace("{" + i + "}", args[i]);
+                }
+                document.writeln(fmt);
+                console.log(fmt.replace("<br/>",""));
+            }
+        }
+
+        printf("Это первый элемент {0}, это второй {1},это третий {2}", "first", "second", 3 + "</br>");
+        let add = (a, b) => a + b;
+//        add = function(a, b) {
+//            return a + b;
+//        }
+//        let add = (a, b) =>return {a + b};
+        printf("{0} + {1} = {2}", 2, 3, add(2, 3));
+        </script>
+    
+<h1>Arrays</h1>
+    <script>
+        //arr = new Array(23);
+        let arr = [5, 2,"str",{},[1,2],true,add];//new Array(1);
+        //arr[0] = 1;
+        arr = [[1,2,3],[4,5,6],[7,8,9]];
+        printf("{0}</br>", arr);
+        //document.writeln(arr)
+        console.log(arr[0][0]);
+        
+     arr = [1,2,3,4,5];
+    //arr.length = 10;    
+    arr.length = 2; 
+        arr[5] = 100;
+    printf("arr = {0} arr[5] = {1}<br/>", arr, arr.length);
+        printf("<h3>for...</h3>")
+        for(let i = 0; i<arr.length; i++){
+            printf("{0} : {1}<br/>", i,arr[i]);
+        }
+       printf("<h3>for...in</h3>")
+        for(let i in arr){
+            printf("{0} : {1}<br/>", i,arr[i]);
+        }
+         printf("<h3>for...of</h3>")
+        for(let item of arr){
+            printf("{0} : {1}<br/>", arr.indexOf(item),item);
+        }
+       document.write("<hr/>");
+        
+        //Работа с массивами, методы! 
+        //LIFO
+        //Добавление в конец массива
+//        arr.push(5);
+//        arr.push(120);
+//        arr.push(15);
+//        printf("{0}", arr);
+//        document.write("<br/>");
+//        arr[arr.length]=345;
+//        
+//         printf("{0}", arr);
+        
+        //выталкивание с конца
+//        document.write("<br/>");
+//        printf("{0}", arr.pop());
+//        document.write("<br/>");
+//        printf("{0}", arr);
+//        
+////        var pop = (arr)=>{
+////            let last = arr[arr.length-1];
+////            arr.length -= 1;
+////            return last;
+////        };
+////         document.write("<br/>");
+////        printf(pop(arr));
+////          document.write("<br/>");
+//       //printf("{0}", arr);
+//        document.write("<br/>");
+//        //Добавление эл-та в начало массива
+////        arr.unshift(56);
+////        arr.unshift(16);
+//         printf("{0}", arr);
+//        document.write("<hr/>");
+//        //Выталкивание эл-та с начала
+//        printf(arr.shift());
+//        document.write("<br/>");
+     
+
+        arr = arr.concat([1,3,4,2], [10,20]);
+        printf("{0}", arr);
+        document.write(typeof arr);
+        
+        
+        
+    </script>
+
+</body>
+</html>
