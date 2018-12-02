@@ -14,4 +14,16 @@ for (var count = 0; guessedNum != num; count++) {
         alert("Ваше число меньше загаданного");
     }
 }
-alert("Поздравляем! Вы угадали число за " + count + " попыток!");
+if (count == 1) {
+    alert("Поздравляем! Вы угадали число за " + count + " попытку!");
+}else if (twoThreeFour ([2, 3, 4], count) == 1){
+    alert("Поздравляем! Вы угадали число за " + count + " попытки!");
+} else {
+    alert("Поздравляем! Вы угадали число за " + count + " попыток!");
+}
+
+function twoThreeFour(arr[], count) {
+    for (i = 1, i<arr.length, i++){
+
+    }
+}
