@@ -1,5 +1,5 @@
 var num = Math.round(Math.random() * 100);
-// console.log("Number:", num);
+console.log("Number:", num);
 
 var guessedNum = 0;
 
@@ -14,16 +14,22 @@ for (var count = 0; guessedNum != num; count++) {
         alert("Ваше число меньше загаданного");
     }
 }
-if (count == 1) {
+if (count === 1) {
     alert("Поздравляем! Вы угадали число за " + count + " попытку!");
-}else if (twoThreeFour ([2, 3, 4], count) == 1){
+}else if (twoThreeFour ([2, 3, 4], count) === 1){
     alert("Поздравляем! Вы угадали число за " + count + " попытки!");
 } else {
     alert("Поздравляем! Вы угадали число за " + count + " попыток!");
 }
 
-function twoThreeFour(arr[], count) {
-    for (i = 1, i<arr.length, i++){
-
+function twoThreeFour(arr[2, 3, 4], count) {
+    for (i = 0, i<arr.length, i++){
+if (count === arr[i]){
+    // noinspection JSAnnotator
+    return 1;
+} else {
+    // noinspection JSAnnotator
+    return 0;
+}
     }
 }
