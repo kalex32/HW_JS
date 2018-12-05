@@ -16,20 +16,17 @@ for (var count = 0; guessedNum != num; count++) {
 }
 if (count === 1) {
     alert("Поздравляем! Вы угадали число за " + count + " попытку!");
-}else if (twoThreeFour ([2, 3, 4], count) === 1){
+} else if (twoThreeFour([2, 3, 4], count) === 1) {
     alert("Поздравляем! Вы угадали число за " + count + " попытки!");
 } else {
     alert("Поздравляем! Вы угадали число за " + count + " попыток!");
 }
 
-function twoThreeFour(arr[2, 3, 4], count) {
-    for (i = 0, i<arr.length, i++){
-if (count === arr[i]){
-    // noinspection JSAnnotator
-    return 1;
-} else {
-    // noinspection JSAnnotator
-    return 0;
-}
+function twoThreeFour(arr, count) {
+    for (var i = 0; i < arr.length; i++) {
+        if (count === arr[i]) {
+            return 1;
+        }
     }
+    return 0;
 }
