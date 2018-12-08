@@ -49,12 +49,12 @@ console.log('webmaster', toAlphaBet('webmaster'));
 function toAlphaBet(str) {
     let arrChar = str.split('');
     for (let i = 0; i < arrChar.length; i++) {
-        for (let j = arrChar.length-1; j > 0; j--)
-        if (arrChar[i] > arrChar[j]) {
-            let temp = arrChar[j];
-            arrChar[i] = arrChar[j];
-            arrChar[j] = temp;
-            console.log(arrChar)
+        for (let j = arrChar.length - 1; j > i; j--) {
+            if (arrChar[i] > arrChar[j]) {
+                let temp = arrChar[j];
+                arrChar[j] = arrChar[i];
+                arrChar[i] = temp;
+            }
         }
     }
     return arrChar.join('');
