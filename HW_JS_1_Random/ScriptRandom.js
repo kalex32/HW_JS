@@ -14,7 +14,7 @@ for (var count = 0; guessedNum !== num; count++) {
         alert("Ваше число меньше загаданного");
     }
 }
-if (count%10 === 1 && count !== 11) {
+if (count % 10 === 1 && count !== 11) {
     alert("Поздравляем! Вы угадали число за " + count + " попытку!");
 } else if (twoThreeFour([2, 3, 4], count) === 1) {
     alert("Поздравляем! Вы угадали число за " + count + " попытки!");
@@ -24,7 +24,7 @@ if (count%10 === 1 && count !== 11) {
 
 function twoThreeFour(arr, count) {
     for (var i = 0; i < arr.length; i++) {
-        if (count%10 === arr[i] && count !==12 && count !==13 && count !==14) {
+        if (count % 10 === arr[i] && count !== 12 && count !== 13 && count !== 14) {
             return 1;
         }
     }
