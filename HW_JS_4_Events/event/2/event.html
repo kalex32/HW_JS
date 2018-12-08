@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title> Document </title>
+    <style type="text/css">
+
+        div {
+            width: 50px;
+            height: 50px;
+            background: black;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+
+    </style>
+</head>
+
+<body>
+<h1>Hello</h1>
+<div id="one"></div>
+<script type="text/javascript" src="script.js">
+    //document.addEventListener('contextmenu', fun);
+
+    //function fun(event) {
+    // console.log("X: " + event.clientX + '|Y: ' + event.clientY)
+    //console.log("X: " + event.which)
+    //console.log("X: " + event.wheel)// window scroll
+    // console.log(event.keyCode)
+    //     .which.charCode
+    // console.log('keykode: ' + event.keyCode);
+    // console.log('charCode: ' + event.charCode);
+    // console.log('char: ' + event.char);
+    // console.log('which: ' + event.which);
+
+    //event.preventDefault();
+
+    //}
+    //function changeBg(eve) {
+    // switch (eve.type) {
+    //     case 'click':
+    //         this.style.background = '#3ADF00';
+    //         break;
+    //     case 'mouseover':
+    //         this.style.background = '#FE2EF7';
+    //         break;
+    //     case 'mouseout':
+    //         this.style.background = 'blue';
+    //         break;
+    // }
+    //this.style.background = config[eve.type];
+
+    //}
+
+    // var el = document.getElementById('one');
+    // el.addEventListener('click', changeBg);
+    // el.addEventListener('mouseover', changeBg);
+    // el.addEventListener('mouseout', changeBg);
+
+    var config = {
+        'click': '#3ADF00',
+        'mouseover': '#FE2EF7',
+        'mouseout': 'blue'
+    }
+
+    function hanler(e) {
+        switch (e.type) {
+            case "click":
+                move(e.clientY, e.clientX);
+                break;
+            case "keyDown":
+                if (e.keyCode > 36 && e.keyCode < 41) {
+                    var stryle = getComputedStyle(el)
+                    switch (e.keyCode) {
+                        case 37:
+                            //left
+                            move(parseInt(stryle.top),parseInt(stryle.left) + 10);
+                            break;
+                            //top
+                        case 38:
+                            move(parseInt(stryle.top)+10,parseInt(stryle.left));
+                            break;
+                            //right
+                        case 39:
+                            move(parseInt(stryle.top),parseInt(stryle.left) - 10);
+                            break;
+                            //down
+                        case 40:
+                            move(parseInt(stryle.top)-10,parseInt(stryle.left));
+                            break;
+                    }
+                }
+                break;
+        }
+    }
+
+    function move(t, l) {
+        el.style.top = t + "px";
+        el.style.left = l + "px";
+    }
+
+    var el = document.getElementById("one");
+    //var  body = document.body;
+    document.addEventListener('click', hanler);
+    document.addEventListener('keyDown', hanler);
+
+
+    document.addEventListener("keyDown", fun1, false);
+
+    function fun1(event) {
+        alert(event.keyCode);
+    }
+</script>
+</body>
+</html>
